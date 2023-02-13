@@ -22,7 +22,7 @@ jobs:
       - run: make ship.${{ matrix.version }}
         env:
           DAGGER_LOG_FORMAT: plain
-          GH_USERNAME: ${{ github.actor }}
-          GH_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          GH_USERNAME: ${{ dockerhub.DOCKER_HUB_USERNAME }}
+          GH_PASSWORD: ${{ dockerhub.DOCKER_HUB_TOKEN }}
           GIT_SHA: ${{ github.sha }}
           GIT_REF: ${{ github.ref }}
